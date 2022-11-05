@@ -8,6 +8,7 @@ const resolvers = {
         .populate("thoughts")
         .populate("friends");
     },
+    // get a user by username
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
